@@ -2,7 +2,6 @@
 
 
 'use strict';
-
 var dateObjects = {
   dateTime: '',
   monthNames: ['January',
@@ -95,11 +94,10 @@ var isToday = function () {
   }
 };
 
-module.export.setdate = setDate;
-module.export.getDate = getDate;
-module.export.getDayName = getDayName
-module.export.getMonthName = getMonthName
-module.export.isFuture = isFuture
-module.export.isToday = isToday
-
+module.exports.setDate = setDate;
+module.exports.getDate = getDate;
+module.exports.getDayName = getDayName;
+module.exports.getMonthName = getMonthName;
+module.exports.isFuture = isFuture;
+module.exports.isToday = isToday;
 
