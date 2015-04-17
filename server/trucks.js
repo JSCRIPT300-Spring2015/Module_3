@@ -258,7 +258,7 @@ var filterByDay = function (day) {
 			return day === truck.schedule[i];
 		}
 	});
-	console.log(filteredTrucks);
+
 	return filteredTrucks;
 };
 
