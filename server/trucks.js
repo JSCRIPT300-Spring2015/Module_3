@@ -255,15 +255,15 @@ var filterByDay = function (day) {
 	var filteredTrucks = _.filter(foodTrucks, function(truck) {
 
 		for (i = 0;  i < truck.schedule.length; i++) {
-			return day === truck.schedule[i];
+			if(day === truck.schedule[i]) {
+				return true;
+			}
 		}
 	});
-
 	return filteredTrucks;
 };
 
-
-module.export.filterByDay = filterByDay;
+module.exports.filterByDay = filterByDay;
 
 /*
  * return an object from the module with a single method on it: filterByDay
