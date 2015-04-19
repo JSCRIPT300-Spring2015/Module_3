@@ -11,11 +11,11 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
-'use strict';
 var http = require('http');
 var enhancedDate = require('./enhancedDate');
 var trucks = require('./trucks');
 http.createServer(function (request, response) {
+  'use strict';
   response.writeHead(200, { 'Content-Type': 'text/plain' });
   var dayName = enhancedDate.getDayName();
   var monthName = enhancedDate.getMonthName();
@@ -32,5 +32,6 @@ http.createServer(function (request, response) {
   response.write(stringHead + truckString);
   response.end();
 }).listen(80, function () {
+  'use strict';
   console.log('listening on port 80');
 });
