@@ -1,3 +1,27 @@
+var ED = require('./enhancedDate');
+var trucks = require('./trucks');
+var http = require('http');
+ED.setDate();
+
+var allTrucks = trucks(ED.getDayName());
+var trucksAvailable = '';
+
+for (var a = 0; a < allTrucks.length; a++) {
+	trucksAvailable = trucksAvailable + allTrucks[a].name + '\n';
+}
+
+var finalText = trucksAvailable.slice(0, trucksAvailable.length - 3);
+
+
+http.createServer(function (request, response) {
+    response.writeHead(200, { 'Content-Type': 'text/plain' });
+    response.write('Today is ' + ED.getDayName() + ', ' + ED.getMonthName() + ' ' + ED.getDate().getFullYear() +
+    	'. Here are the available food trucks: \n' + finalText);
+    response.end();
+}).listen(3000, function () {
+    console.log('listening on port 3000');
+});
+
 // make this a simple http server that writes to the response stream object
 
 // the page should display the following message:
