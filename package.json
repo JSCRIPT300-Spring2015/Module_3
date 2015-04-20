@@ -1,0 +1,28 @@
+{
+  "name": "Module_3",
+  "version": "1.0.0",
+  "description": "Module 3 for JSCRIPT300",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \"Error: no test specified\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitterkitten/Module_3.git"
+  },
+  "keywords": [
+    "\"escape\"",
+    "\"unescape\"",
+    "\"html\""
+  ],
+  "author": "Carolyn Velez <carolyn.g.velez@gmail.com> (http://carolynvelez.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitterkitten/Module_3/issues"
+  },
+  "homepage": "https://github.com/bitterkitten/Module_3",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  }
+}
