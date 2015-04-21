@@ -1,4 +1,12 @@
-// use the underscore module to filter the following data
+/*
+ * Homework 
+ * JSCRIPT300-Spring2015/Module_3
+ * by Diane Zevenbergen
+ */
+
+'use strict';
+
+var us = require('underscore');
 
 var foodTrucks = [
 	{
@@ -249,8 +257,23 @@ var foodTrucks = [
 ];
 
 /* 
- * return an object from the module with a single method on it: filterByDay
- * that method should take a single parameter that represents the day to filter on
- * use underscore's filter() method to return all trucks that have the day in their
- * schedule
- * /
+ * Function returns array object of food trucks available today.
+ * Uses underscore's filter() method.
+ */ 
+function filterByDay(day) {
+    var daysOpen;
+
+    /*
+     * Filter looks for specific weekday in the 'schedule' array of each foodTruck object
+     * and returns the subset of foodTrucks that match.
+     */
+    var todaysTrucks = us.filter(foodTrucks,function(item) {
+        return us.any(item.schedule,function(item1) {
+            return item1 === day;
+        });
+    });
+
+    return todaysTrucks;
+}
+
+module.exports.filterByDay = filterByDay;
