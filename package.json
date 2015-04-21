@@ -1,0 +1,22 @@
+{
+  "name": "Module_3",
+  "version": "0.0.0",
+  "description": "For this assignment, you're going to for this repository to your own Github account and clone that repository locally. Inside the repo you'll find a directory called server. Inside that directory you'll find three placeholder files: server.js, enhancedDate.js, and trucks.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aragonwa/Module_3.git"
+  },
+  "author": "Alex Aragon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aragonwa/Module_3/issues"
+  },
+  "homepage": "https://github.com/aragonwa/Module_3",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
