@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'enhancedDate.js' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 silly cache add args [ 'enhancedDate.js', null ]
+6 verbose cache add spec enhancedDate.js
+7 silly cache add parsed spec { raw: 'enhancedDate.js',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: 'enhancedDate.js',
+7 silly cache add   spec: 'C:\\Users\\tedmmc\\Desktop\\Class\\GitHub\\Module_3\\server\\enhancedDate.js',
+7 silly cache add   type: 'local' }
+8 silly addLocalTarball shasum (computed) 09fcb7bd1d2fd3b28868420143095a7a4e60e2a1
+9 verbose addTmpTarball C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server\enhancedDate.js not in flight; adding
+10 verbose addTmpTarball validating metadata from C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server\enhancedDate.js
+11 verbose tar unpack C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server\enhancedDate.js
+12 verbose tar unpacking to C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6
+13 silly gentlyRm C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6 is being purged
+14 verbose gentlyRm don't care about contents; nuking C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6
+15 silly gunzTarPerm modes [ '777', '666' ]
+16 error not a package C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server\enhancedDate.js
+17 error addLocal Could not install C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server\enhancedDate.js
+18 verbose stack Error: ENOENT, open 'C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6\package.json'
+18 verbose stack     at Error (native)
+19 verbose cwd C:\Users\tedmmc\Desktop\Class\GitHub\Module_3\server
+20 error Windows_NT 6.1.7601
+21 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "enhancedDate.js"
+22 error node v0.12.2
+23 error npm  v2.7.4
+24 error path C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6\package.json
+25 error code ENOENT
+26 error errno -4058
+27 error enoent ENOENT, open 'C:\Users\tedmmc\AppData\Local\Temp\npm-7756-d2039a55\unpack-70dd7bb91da6\package.json'
+27 error enoent This is most likely not a problem with npm itself
+27 error enoent and is related to npm not being able to find a file.
+28 verbose exit [ -4058, true ]
