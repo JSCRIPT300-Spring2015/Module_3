@@ -1,0 +1,90 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'enhancedDate' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json Homework3@1.0.0 No repository field.
+6 warn package.json Homework3@1.0.0 No README data
+7 silly cache add args [ 'enhancedDate', null ]
+8 verbose cache add spec enhancedDate
+9 silly cache add parsed spec { raw: 'enhancedDate',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'enhancedDate',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 verbose addNamed enhancedDate@*
+11 silly addNamed semver.valid null
+12 silly addNamed semver.validRange *
+13 silly addNameRange { name: 'enhancedDate', range: '*', hasData: false }
+14 silly mapToRegistry name enhancedDate
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/enhancedDate
+18 verbose addNameRange registry:https://registry.npmjs.org/enhancedDate not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/enhancedDate
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 11:16:55 AM
+22 verbose request id 8e26d964ed915f81
+23 http request GET https://registry.npmjs.org/enhancedDate
+24 http 404 https://registry.npmjs.org/enhancedDate
+25 verbose headers { date: 'Sun, 19 Apr 2015 18:16:55 GMT',
+25 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+25 verbose headers   'content-type': 'application/json',
+25 verbose headers   'cache-control': 'max-age=0',
+25 verbose headers   'content-length': '51',
+25 verbose headers   'accept-ranges': 'bytes',
+25 verbose headers   via: '1.1 varnish',
+25 verbose headers   age: '0',
+25 verbose headers   'x-served-by': 'cache-lax1424-LAX',
+25 verbose headers   'x-cache': 'MISS',
+25 verbose headers   'x-cache-hits': '0',
+25 verbose headers   'x-timer': 'S1429467414.985376,VS0,VE46',
+25 verbose headers   'keep-alive': 'timeout=10, max=50',
+25 verbose headers   connection: 'Keep-Alive' }
+26 silly get cb [ 404,
+26 silly get   { date: 'Sun, 19 Apr 2015 18:16:55 GMT',
+26 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly get     'content-type': 'application/json',
+26 silly get     'cache-control': 'max-age=0',
+26 silly get     'content-length': '51',
+26 silly get     'accept-ranges': 'bytes',
+26 silly get     via: '1.1 varnish',
+26 silly get     age: '0',
+26 silly get     'x-served-by': 'cache-lax1424-LAX',
+26 silly get     'x-cache': 'MISS',
+26 silly get     'x-cache-hits': '0',
+26 silly get     'x-timer': 'S1429467414.985376,VS0,VE46',
+26 silly get     'keep-alive': 'timeout=10, max=50',
+26 silly get     connection: 'Keep-Alive' } ]
+27 verbose stack Error: 404 Not Found: enhancedDate
+27 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:245:14)
+27 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:170:14)
+27 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:344:22)
+27 verbose stack     at Request.emit (events.js:110:17)
+27 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1239:14)
+27 verbose stack     at Request.emit (events.js:129:20)
+27 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1187:12)
+27 verbose stack     at IncomingMessage.emit (events.js:129:20)
+27 verbose stack     at _stream_readable.js:908:16
+27 verbose stack     at process._tickCallback (node.js:355:11)
+28 verbose statusCode 404
+29 verbose pkgid enhancedDate
+30 verbose cwd C:\Users\DianeZev\Documents\GitHub\Module_3\server
+31 error Windows_NT 6.1.7601
+32 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "enhancedDate"
+33 error node v0.12.2
+34 error npm  v2.7.4
+35 error code E404
+36 error 404 Not Found: enhancedDate
+36 error 404
+36 error 404 'enhancedDate' is not in the npm registry.
+36 error 404 You should bug the author to publish it (or use the name yourself!)
+36 error 404 It was specified as a dependency of 'Homework3'
+36 error 404
+36 error 404 Note that you can also install from a
+36 error 404 tarball, folder, http url, or git url.
+37 verbose exit [ 1, true ]
