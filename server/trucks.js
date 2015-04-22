@@ -250,9 +250,10 @@ var foodTrucks = [
 ];
 function filterByDay(day) {
 	var filtered = _.filter(foodTrucks, function(data) {
-		for (var i = 0; i < data.schedule.length; i++) {
-			if (day === data.schedule[i]) {return data.name;} 
-		};
+		var toReturn = _.filter(data.schedule, function(date) {
+			if (day === date) {return true;} 
+		});
+		if(toReturn[0]) {return true;}
 	});
 	return filtered;
 }

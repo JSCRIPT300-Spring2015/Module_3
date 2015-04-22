@@ -15,7 +15,7 @@ var finalText = trucksAvailable.slice(0, trucksAvailable.length - 3);
 
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('Today is ' + ED.getDayName() + ', ' + ED.getMonthName() + ' ' + ED.getDate().getFullYear() +
+    response.write('Today is ' + ED.getDayName() + ', ' + ED.getMonthName() + ' ' + ED.getDate(true).getFullYear() +
     	'. Here are the available food trucks: \n' + finalText);
     response.end();
 }).listen(3000, function () {
