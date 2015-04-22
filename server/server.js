@@ -1,14 +1,15 @@
 var ED = require('./enhancedDate');
 var trucks = require('./trucks');
 var http = require('http');
+var _ = require('underscore');
 ED.setDate();
 
 var allTrucks = trucks(ED.getDayName());
 var trucksAvailable = '';
 
-for (var a = 0; a < allTrucks.length; a++) {
-	trucksAvailable = trucksAvailable + allTrucks[a].name + '\n';
-}
+var trucksAvailable = _.map(allTrucks, function(x) {
+	return x.name;
+}).join('\n');
 
 var finalText = trucksAvailable.slice(0, trucksAvailable.length - 3);
 
