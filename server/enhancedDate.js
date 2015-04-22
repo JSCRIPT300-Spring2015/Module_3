@@ -78,11 +78,6 @@ var enhancedDate = function() {
     };
 
     return myObject;
-    /*
-    return{
-       myObject.now: myObject.now; 
-    };
-    */
     
 };
 module.exports = enhancedDate;
