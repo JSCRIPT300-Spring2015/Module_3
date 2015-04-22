@@ -1,0 +1,16 @@
+{
+  "name": "foodTrucks",
+  "version": "1.0.0",
+  "description": "Provides a list of available food trucks.",
+  "main": "server.js",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
