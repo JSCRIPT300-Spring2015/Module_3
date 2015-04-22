@@ -1,7 +1,7 @@
 // export this as a Node module using the enhancedDate.js code from Module_2
 
 // code from module_2 modified for node use
-var exports.enhancedDate = (function() {
+var enhancedDate = function() {
     'use strict';
 
     //create object
@@ -77,11 +77,12 @@ var exports.enhancedDate = (function() {
         }
     };
 
-    //return myObject;
-    
+    return myObject;
+    /*
     return{
        myObject.now: myObject.now; 
     };
+    */
     
-    
-})();
+};
+module.exports = enhancedDate;

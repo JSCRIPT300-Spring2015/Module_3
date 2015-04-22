@@ -22,8 +22,9 @@ console.log(simple.answer);
 
 
 var nodeDate = require('./enhancedDate'); //leave off file extension
-
-console.log(nodeDate.now);
+var myObject = nodeDate();
+myObject.setDate();
+console.log(myObject.now);
 /*
 
 
