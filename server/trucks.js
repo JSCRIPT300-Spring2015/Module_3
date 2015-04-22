@@ -1,4 +1,5 @@
 // use the underscore module to filter the following data
+var _ = require('underscore');
 
 var foodTrucks = [
 	{
@@ -253,4 +254,16 @@ var foodTrucks = [
  * that method should take a single parameter that represents the day to filter on
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
- * /
+ */
+
+var filterByDay = function filterByDay(day) {
+
+	var todayFoodTrucks = _.filter(foodTrucks, function(truck){
+		for (var i = 0; i < truck.schedule.length; i++){
+			return day === truck.schedule[i];
+		}
+	});
+	return todayFoodTrucks;
+};
+
+module.exports.filterByDay = filterByDay;
