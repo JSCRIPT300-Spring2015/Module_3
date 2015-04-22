@@ -29,65 +29,65 @@ function checkHasDate(){
 
 var enhancedDate = {
 
-        /*
-         * Stores the passed-in date. This function can take milliseconds after epoch or a Date object.  
-         * Do some type-checking to make sure you have a valid type. If no value is passed, default your internally stored date to now.
-        */
-        setDate: function setDate(inputDate) {
+    /*
+     * Stores the passed-in date. This function can take milliseconds after epoch or a Date object.  
+     * Do some type-checking to make sure you have a valid type. If no value is passed, default your internally stored date to now.
+    */
+    setDate: function setDate(inputDate) {
 
-            checkHasDate();
+        checkHasDate();
 
-            if (inputDate){
+        if (inputDate){
 
-                // check if a valid date type and check if pass milliseconds
-                if (Object.prototype.toString.call(inputDate) === '[object Date]' || isNaN(inputDate)) {
-                    privateData.storedDate = new Date(inputDate);
-                }else{
-                    consolo.log("Please input valid date type.");
-                }               
-            }            
-        },
-
-        // Returns either milliseconds after epoch by default or a Date object if true is passed as an argument.        
-        getDate: function getDate(isDateObject) {
-            
-            checkHasDate();            
-
-            if (isDateObject){
-               return privateData.storedDate;
+            // check if a valid date type and check if pass milliseconds
+            if (Object.prototype.toString.call(inputDate) === '[object Date]' || isNaN(inputDate)) {
+                privateData.storedDate = new Date(inputDate);
             }else{
-               return privateData.storedDate.getTime();
-            }            
-        },
+                consolo.log("Please input valid date type.");
+            }               
+        }            
+    },
 
-        // Returns the full day name as a string, e.g. "Monday", "Tuesday", etc.
-        getDayName: function getDayName() {
-            
-            checkHasDate();
-            return privateData.days[privateData.storedDate.getDay()];
-        },
+    // Returns either milliseconds after epoch by default or a Date object if true is passed as an argument.        
+    getDate: function getDate(isDateObject) {
+        
+        checkHasDate();            
 
-        // Return the full month name as a string, e.g. "January", "February", etc.
-        getMonthName: function getMonthName() {
+        if (isDateObject){
+           return privateData.storedDate;
+        }else{
+           return privateData.storedDate.getTime();
+        }            
+    },
 
-            checkHasDate();
-            return privateData.months[privateData.storedDate.getMonth()];
-        },
+    // Returns the full day name as a string, e.g. "Monday", "Tuesday", etc.
+    getDayName: function getDayName() {
+        
+        checkHasDate();
+        return privateData.days[privateData.storedDate.getDay()];
+    },
 
-        // Return boolean true if date is in the future (from when method is called)
-        isFuture: function isFuture() {
-            
-            checkHasDate();
-            return privateData.storedDate > Date.now();
-        },
+    // Return the full month name as a string, e.g. "January", "February", etc.
+    getMonthName: function getMonthName() {
 
-        // Return boolean true if the stored date is "today".
-        isToday: function isToday() {
+        checkHasDate();
+        return privateData.months[privateData.storedDate.getMonth()];
+    },
 
-            checkHasDate();
-            return privateData.storedDate.toDateString() === new Date().toDateString();
-        }
-    
+    // Return boolean true if date is in the future (from when method is called)
+    isFuture: function isFuture() {
+        
+        checkHasDate();
+        return privateData.storedDate > Date.now();
+    },
+
+    // Return boolean true if the stored date is "today".
+    isToday: function isToday() {
+
+        checkHasDate();
+        return privateData.storedDate.toDateString() === new Date().toDateString();
+    }
+
 };
 
 

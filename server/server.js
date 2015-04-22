@@ -25,7 +25,7 @@ for (var i = 0; i < todayTrucks.length; i++){
 
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('Today is ' + enhancedDate.getDayName() + ', ' + enhancedDate.getMonthName() + ', (' +  enhancedDate.getDate(true).toDateString() + '). Here are the available food trucks: \n' + todayTruckNames);
+    response.write('Today is ' + enhancedDate.getDayName() + ', ' + enhancedDate.getMonthName() + ' ' + enhancedDate.getDate(true).getDate() + '. Here are the available food trucks: \n' + todayTruckNames);
     response.end();
 }).listen(3000, function () {
     console.log('listening on port 3000');
