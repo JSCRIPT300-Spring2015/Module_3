@@ -21,7 +21,7 @@
       if (!(d instanceof Date)) {
           theDate.time = new Date();
       } else {
-        theDate.time = d;
+        theDate.time = new Date(d);
       }
           return theDate.time;
     };
