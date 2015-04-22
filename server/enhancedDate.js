@@ -13,7 +13,7 @@ function hasDate() {
     if (!date) {
         date = new Date();
     }
-};
+}
 
 // Methods availabls as a public API    
 // setDate allows users to change the date without touching our hidden date variable
