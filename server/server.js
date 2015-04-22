@@ -4,15 +4,9 @@ var http = require('http');
 var _ = require('underscore');
 ED.setDate();
 
-var allTrucks = trucks(ED.getDayName());
-var trucksAvailable = '';
-
-var trucksAvailable = _.map(allTrucks, function(x) {
+var finalText = _.map(trucks(ED.getDayName()), function(x) {
 	return x.name;
 }).join('\n');
-
-var finalText = trucksAvailable.slice(0, trucksAvailable.length - 3);
-
 
 http.createServer(function (request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
