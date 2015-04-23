@@ -1,82 +1,47 @@
-var enhancedDate = (function iife() {
-    
-    // private functions
-    var publicAPI = {
-        setDate: function setDate(userDate) {
-            // Set working date to user input if date object given
-            if (userDate instanceof Date) {
-                var workingDate = userDate;
-            } else {
-                var workingDate = new Date();
-            }
+var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 
+                        'September', 'October', 'November', 'December'];
 
-            return workingDate;
-        },
-
-        getDate: function getDate(asDateObj) {
-            // return date object if requested
-            if (asDateObj === true) {
-                return workingDate;
-            } else {
-            // return milliseconds after 1970 by default
-                
-                return workingDate.getTime();
-            }
-        },
-
-        getDayName: function getDayName() {
-            // return weekday name string
-
-            // define lookup for weekday value to name
-            var weekday = { 0: 'Sunday',
-                            1: 'Monday',
-                            2: 'Tuesday',
-                            3: 'Wednesday',
-                            4: 'Thursday',
-                            5: 'Friday',
-                            6: 'Saturday'};
-
-            return weekday[workingDate.getDay()];
-        },
-
-        getMonthName: function getMonthName() {
-            // return month name string
-
-            // define lookup for month value to name
-            var month = {   0: 'January',
-                            1: 'February',
-                            2: 'March',
-                            3: 'April',
-                            4: 'May',
-                            5: 'June',
-                            6: 'July',
-                            7: 'August',
-                            8: 'September',
-                            9: 'October',
-                            10: 'November',
-                            11: 'December'};
-
-            return month[workingDate.getMonth()];
-        },
-
-        isFuture: function isFuture() {
-            // Check if date val is greater than current date val
-
-            // Test if user's working date is in future or not
-            if (workingDate > new Date()) {
-                return true;
-            } 
-        },
-
-        isToday: function isToday() {
-            if (workingDate.getDay() === new Date().getDay()) {
-                return true
-            }
+var enhancedDate = {
+    setDate: function setDate(date) {
+        if (date instanceof Date || typeof date === 'number') {
+            myDate = new Date(date);    // create a new date object so we can't overwrite the myDate var declared above
+        } else {
+            myDate = new Date();
         }
-    };
+    },
 
-    return publicAPI;
+    getDate: function getDate(returnObj) {
+        if (returnObj) {
+            return myDate;
+        } else {
+            return myDate.getTime();
+        }
+    },
+
+    getDayNames: function getDayNames() {
     
-})();
+        var day = myDate.getDay();
+        
+        return dayNames[day];
+    },
 
+    getMonthNames: function getMonthNames() {
+    
+        var month = myDate.getMonth();
+        
+        return monthNames[month];
+    
+    },
 
+    isFuture: function isFuture() {
+        return myDate.getTime() > Date.now();
+    }
+
+    //var myDate;     // keep track of a date reference to be used in methods later
+    
+};
+
+module.exports.enhancedDate = enhancedDate;
+module.exports.dayNames = dayNames;
+module.exports.monthNames = monthNames;
