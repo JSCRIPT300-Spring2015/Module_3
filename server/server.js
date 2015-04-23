@@ -11,20 +11,18 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
+'use strict';
 
 var http = require('http');
 var enhancedDate = require('./enhancedDate');
 var trucks = require('./trucks');
-
-enhancedDate.setDate();
 var today = enhancedDate.getDayName();
 var month = enhancedDate.getMonthName();
 var date = enhancedDate.getDate(true);
-
 var truckString = '';
 var filteredTrucks = trucks.filterByDay(today);
 var i;
-console.log(filteredTrucks.length)
+
 for(i = 0; i < filteredTrucks.length; i++) {
   truckString += filteredTrucks[i].name + '\n'; 
 }

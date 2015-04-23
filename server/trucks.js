@@ -265,4 +265,8 @@ var filterByDay = function(day){
 	});
 }
 
-module.exports.filterByDay = filterByDay;
+
+var trucks = {
+	filterByDay : filterByDay
+};
+module.exports = trucks;
