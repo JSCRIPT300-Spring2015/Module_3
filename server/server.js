@@ -11,3 +11,29 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
+'use strict';
+
+var http = require('http');
+var enhancedDate = require('./enhancedDate');
+var trucks = require('./trucks');
+var today = enhancedDate.getDayName();
+var month = enhancedDate.getMonthName();
+var date = enhancedDate.getDate(true);
+var truckString = '';
+var filteredTrucks = trucks.filterByDay(today);
+var i;
+
+for(i = 0; i < filteredTrucks.length; i++) {
+  truckString += filteredTrucks[i].name + '\n'; 
+}
+
+http.createServer(function (request, response) {
+
+    response.writeHead(200, { 'Content-Type': 'text/plain' });
+    response.write('Today is ' + today + ', ' + month + ' ' + date.getDate() + '\n');
+    response.write('Here are the available food trucks: \n');
+    response.write(truckString);
+    response.end();
+}).listen(3000, function () {
+    console.log('listening on port 3000');
+});
