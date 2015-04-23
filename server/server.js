@@ -10,9 +10,9 @@ http.createServer(function (request, response) {
 	var newDate = new Date();
 	enhancedDate.setDate(newDate);
 
-	// when in used the enhancedDate.get() method I kept getting the date returned in milliseconds
-	var dayOfMonth = new Date();
-	var showDay = dayOfMonth.getDay();
+	// When I used the enhancedDate.get() method I kept getting the date returned in milliseconds.
+	// I know this isn't the right way to do it even though it appears to work. What's the right way?
+	var showDay = newDate.getDate();
 
 	var getDayName = enhancedDate.getDayName();
 
