@@ -1,13 +1,26 @@
-// make this a simple http server that writes to the response stream object
+var http = require('http');
+var enhancedDate = require('./enhancedDate.js');
+var trucks = require('./trucks.js');
 
-// the page should display the following message:
+http.createServer(function (request, response) {
 
-// Today is <day name>, <month name> <date>. Here are the available food trucks:
+	var newDate = new Date();
+	enhancedDate.setDate(newDate);
 
-// list the food trucks returned by filterByDay, passing in the current day name.
-// e.g. filterByDay(day); where "day" is determined using the enhancedDate module
-// The list of trucks returned will be an array of food truck objects. Iterate 
-// through the list, building up a string of food truck names. Once you're done 
-// iterating through that list, display the string you built up.
+	var getDayName = enhancedDate.getDayName();
 
-// Remember that the response is a stream object that must be closed.
+	var responseString = "Today is " + getDayName + ", " + enhancedDate.getMonthName() + ". The food trucks available are:";
+
+	var listTrucks = trucks.filterByDay(getDayName);
+
+	for (var i = 0; i < trucks.length; i++) {
+		responseString += "\n" + listTrucks[i].name;
+	}
+
+	response.writeHead(200, {'Content-Type': 'text/plain'});
+	response.write(responseString);
+	response.end();
+
+}).listen(3000, function () {
+	console.log('listening on port 3000');
+});
