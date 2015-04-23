@@ -1,7 +1,7 @@
 /*
  * Carolyn Velez
- * JSCRIPT 300
- * 04/14/15
+ * JSCRIPT 300, Module 3
+ * 04/23/15
  */
 
 

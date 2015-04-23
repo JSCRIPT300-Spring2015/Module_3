@@ -269,3 +269,6 @@ var sortTrucks = {
 };
 
 module.exports = sortTrucks;
+
+// TEST
+//console.log(sortTrucks.filterByDay("Tuesday"));

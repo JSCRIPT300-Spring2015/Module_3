@@ -1,15 +1,22 @@
 var http = require('http');
-var enhancedDate = require('./enhancedDate.js');
-var trucks = require('./trucks.js');
+var enhancedDate = require('./enhancedDate');
+var trucks = require('./trucks');
+
+// TEST
+//console.log(trucks.filterByDay("Tuesday"));
 
 http.createServer(function (request, response) {
 
 	var newDate = new Date();
 	enhancedDate.setDate(newDate);
 
+	// when in used the enhancedDate.get() method I kept getting the date returned in milliseconds
+	var dayOfMonth = new Date();
+	var showDay = dayOfMonth.getDay();
+
 	var getDayName = enhancedDate.getDayName();
 
-	var responseString = "Today is " + getDayName + ", " + enhancedDate.getMonthName() + ". The food trucks available are:";
+	var responseString = "Today is " + getDayName + ", " + enhancedDate.getMonthName() + " " + showDay + ". The food trucks available are:";
 
 	var listTrucks = trucks.filterByDay(getDayName);
 
