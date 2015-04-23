@@ -12,8 +12,8 @@
 
 // Remember that the response is a stream object that must be closed.
 var http = require('http');
-var trucks = require('trucks');
-var enhancedDate = require('enhancedDate');
+var trucks = require('./trucks');
+var enhancedDate = require('./enhancedDate');
 var dayName = enhancedDate.getDayName;
 var monthName = enhancedDate.getMonthName;
 
@@ -27,7 +27,7 @@ for (i, i < availableTrucks.length, i++) {
 function handleRequest(request, response) {
 
     response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('Today is ' + dayName + ', ' + monthName + ' date ' +
+    response.write('Today is ' + dayName + ', ' + monthName + ' ' + Date.getDate +
         ' and the available trucks are ' + '\n' + truckString);
     response.end('Have a great meal!');
 }

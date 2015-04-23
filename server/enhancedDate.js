@@ -1,129 +1,128 @@
-var myDate = function enhancedDate() {    
+var enhancedDate = function iife() {    
     'use strict';
 
     var theDate;
     var now;
     var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 
         'Friday', 'Saturday'];
-    var monthNames = ['Januray', 'February', 'March', 'April', 'May', 'June',
+    var monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'November', 'December'];
+    var dateSet = false;
+    // explicit object enhancedDate      
 
-    // explicit object enhancedDate   
-    var enhancedDate = {    
+    //function checkDate(userDate) {
+    //      if (theDate instanceof Date) {
+    //            return true; 
+    //        } else {
+    //            return false;    
+    //        }
+    //    },
 
-        checkDate: function checkDate(userDate) {
-            if (theDate instanceof Date) {
-                return true; 
-            } else {
-                return false;    
-            }
-        },
-
-        setDate: function setDate(userDate) { 
-            if (userDate instanceof Date) {
-                theDate = userDate;
-            } else { 
-                if (typeof userDate === 'number') {
+     function setDate(userDate) { 
+        if (userDate instanceof Date) {
+            theDate = new Date(userDate);
+        } else { 
+            if (typeof userDate === 'number') {
                 theDate = new Date(userDate);
-                } else {
-                    theDate = new Date();
-                }
-            }           
+            } else {
+                theDate = new Date();
+            }
+        } 
+        dateSet = true;          
             //console.log("In set date - date = ", theDate);      
-        }, 
+    }, 
 
-        getDate: function getDate(userDate) {            
-            if (!this.checkDate(userDate)) {
-                this.setDate(userDate); 
-            }
-            //if (userDate)  {
-            //    this.setDate(userDate)
-            //} else {
-            //    theDate = Date.now();
-            // return theDate;
-            //}                    
-        },
+     function getDate(returnObj) {            
+        if (!dateSet) {
+           this.setDate(returnObj); 
+        }
+        if (returnObj) {
+            return theDate;
+        } else {
+            return theDate.getTime();
+        }
+                              
+    },
 
-        getDayName: function getDayName(userDate) {
+    function getDayName() {
         
-            var dayNumber;
-            var theDay;
+        if (!dateSet) {
+            setDate; 
+        }
 
-            if (!this.checkDate(userDate)) {
-                this.setDate(userDate); 
-            }
+        var dayNumber;
+        var theDay;
 
-            dayNumber = theDate.getDay();
-            //console.log('dayNumber = ', dayNumber);
-            theDay = dayNames[dayNumber];
+        if (!this.checkDate(userDate)) {
+            this.setDate(userDate); 
+        }
+
+        dayNumber = theDate.getDay();
+        //console.log('dayNumber = ', dayNumber);
+        theDay = dayNames[dayNumber];
  
         console.log("Day of the week is ", theDay);
         return theDay;
         },
 
-        getMonthName:  function getMonthName(userDate) {
+    function getMonthName() {
         	
-            var theMonth;
-            var monthNumber;
+        if (!dateSet) {
+            setDate; 
+        }        
 
-            if (!this.checkDate(userDate)) {
-                this.setDate(userDate); 
-            }
+        var theMonth;
+        var monthNumber;
 
-            monthNumber = theDate.getMonth();            
-            theMonth = monthNames[monthNumber];
+        monthNumber = theDate.getMonth();            
+        theMonth = monthNames[monthNumber];
 
         console.log("Month is ", theMonth);
         return theMonth;
 
-        },
+    },
 
-        isFuture: function isFuture(userDate) {
+    function isFuture() {
 
-            var now = Date.now();
+        if (!dateSet) {
+            setDate; 
+        }        
 
-            if (!this.checkDate(userDate)) {
-                this.setDate(userDate); 
-            }
-            if (now > theDate.getTime()) {
-                return false;
-            } else {
-                return true;
-            }
-        },
+        now = Date.now();
 
-        isToday: function isToday(userDate) {
+        if (now > theDate.getTime()) {
+            return false;
+        } else {
+            return true;
+        }
+    },
 
-            if (!this.checkDate(userDate)) {
-                this.setDate(userDate); 
-            }
+    function isToday() {
 
-            var todaysDate = new Date();
-            var todaysMonth = todaysDate.getDate();
-            var todaysDay = todaysDate.getDay();
-            var todaysYear = todaysDate.getFullYear();
-
-            var passedMonth = theDate.getDate();
-            var passedDay = theDate.getDay();
-            var passedYear = theDate.getFullYear();
-
-            if ((todaysMonth === passedMonth) && (todaysDay === passedDay) &&
-                (todaysYear === passedYear)) {
-                return true;
-            } else {
-                return false;
-            }
+        if (!dateSet) {
+            setDate; 
         }
 
-    };    
+        var todaysDate = new Date();
+        var todaysMonth = todaysDate.getMonth();
+        var todaysDate1 = todaysDate.getDate();
+        var todaysYear = todaysDate.getYear();
 
- 
-    };
+         if ((todaysMonth === theDate.getMonth()) && (todaysDate1 === theDate.getDate()) &&
+            (todaysYear === theDate.getYear())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-module.exports = myDate;
-//module.exports.getDate = getDate;
-//module.exports.setDate = setDate;
-//module.exports.getDayName = getDayName;
-//module.exports.getMonthName = getMonthName;
-//module.exports.isFuture = isFuture;
-//module.exports.isToday = isToday;
+return {
+    setDate: setDate,
+    getDate: getDate,
+    getDayName: getDayName,
+    getMonthName: getMonthName,
+    isFuture: isFuture,
+    isToday: isToday
+};
+
+module.exports = enhancedDate;

@@ -1,4 +1,4 @@
-var enhancedDate = require('enhancedDate');
+var _ = require('underscore');
 
 var foodTrucks = [
 	{
@@ -248,16 +248,18 @@ var foodTrucks = [
 	}
 ];
 
-var availableTrucks = {
 
-	filterByDay: _.filter(foodTrucks.schedule, enhancedDate.getDayName) {
-   //look through the schedule for each truck
-   // if the schedule contains the dayOfWeek passed in
-   // include the Truck in the availableTrucks
-});
+//look through the schedule for each truck
+// if the schedule contains the name of the day in getDayName
+// include the Truck in the availableTrucks
+function filterByDay(dayName) {
+	 _.filter(foodTrucks, function (truck){
+          _.any(truck.schedule === dayName);
+              return truck;
+          }
+	});
 }
-
-module.exports = availableTrucks;
+module.exports = filterByDay;
 /* 
  * return an object from the module with a single method on it: filterByDay
  * that method should take a single parameter that represents the day to filter on
