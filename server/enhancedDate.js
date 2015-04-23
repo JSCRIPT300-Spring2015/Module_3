@@ -27,22 +27,18 @@ function isDateSet(){
 date object. Do some type-checking to make sure you have a valid type. If 
 no value is passed, default to now.*/
 var setDate = function (inDate) {
-  hasDate();
-  if (typeof inDate === 'number' || inDate instanceof Date) {
-    date = new Date(inDate);
-  }
- /* dateData.date = new Date(inDate);
-  if(Date.parse(date)){
-    dateData.date = date;
-  } else if(!isNaN(date)){
-    dateData.date = new Date(date);
-  } else if(date === undefined){
+  isDateSet();
+  dateData.date = new Date(inDate);
+  if(Date.parse(inDate)){
+    dateData.date = inDate;
+  } else if(!isNaN(inDate)){
+    dateData.date = new Date(inDate);
+  } else if(inDate === undefined){
     dateData.date = new Date();
   }
   else {
     console.log('Not a valid date format. Will default to now.');
   }
-  return dateData;*/
 };
 /* getDate: Returns either milliseconds after epoch by default or a date 
 object if true is passed as an argument.*/
