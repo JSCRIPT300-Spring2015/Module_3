@@ -1,4 +1,4 @@
-var enhancedDate = function iife() {    
+var enhancedDate = function () {    
     'use strict';
 
     var theDate;
