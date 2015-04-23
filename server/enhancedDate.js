@@ -30,32 +30,29 @@ var enhancedDate = function iife() {
         } 
         dateSet = true;          
             //console.log("In set date - date = ", theDate);      
-    }, 
+    } 
 
      function getDate(returnObj) {            
         if (!dateSet) {
-           this.setDate(returnObj); 
+           setDate();
         }
+
         if (returnObj) {
             return theDate;
         } else {
             return theDate.getTime();
         }
                               
-    },
+    }
 
     function getDayName() {
         
         if (!dateSet) {
-            setDate; 
+            setDate(); 
         }
 
         var dayNumber;
         var theDay;
-
-        if (!this.checkDate(userDate)) {
-            this.setDate(userDate); 
-        }
 
         dayNumber = theDate.getDay();
         //console.log('dayNumber = ', dayNumber);
@@ -63,12 +60,12 @@ var enhancedDate = function iife() {
  
         console.log("Day of the week is ", theDay);
         return theDay;
-        },
+        }
 
     function getMonthName() {
         	
         if (!dateSet) {
-            setDate; 
+            setDate(); 
         }        
 
         var theMonth;
@@ -80,12 +77,12 @@ var enhancedDate = function iife() {
         console.log("Month is ", theMonth);
         return theMonth;
 
-    },
+    }
 
     function isFuture() {
 
         if (!dateSet) {
-            setDate; 
+            setDate(); 
         }        
 
         now = Date.now();
@@ -95,12 +92,12 @@ var enhancedDate = function iife() {
         } else {
             return true;
         }
-    },
+    }
 
     function isToday() {
 
         if (!dateSet) {
-            setDate; 
+            setDate(); 
         }
 
         var todaysDate = new Date();
@@ -116,13 +113,14 @@ var enhancedDate = function iife() {
         }
     }
 
-return {
-    setDate: setDate,
-    getDate: getDate,
-    getDayName: getDayName,
-    getMonthName: getMonthName,
-    isFuture: isFuture,
-    isToday: isToday
 };
+//return {
+//    setDate: setDate,
+//    getDate: getDate,
+//    getDayName: getDayName,
+//    getMonthName: getMonthName,
+//    isFuture: isFuture,
+//    isToday: isToday
+//};
 
 module.exports = enhancedDate;

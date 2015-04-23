@@ -20,9 +20,9 @@ var monthName = enhancedDate.getMonthName;
 var availableTrucks = trucks.filterByDay(dayName);
 var truckString = '';
 var i = 0;
-for (i, i < availableTrucks.length, i++) {
+for (i; i < availableTrucks.length; i++) {
 	truckString += availableTrucks[i].name + '\n';
-};
+}
 
 function handleRequest(request, response) {
 
