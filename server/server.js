@@ -30,7 +30,7 @@ for (i; i < availableTrucks.length; i++) {
 function handleRequest(request, response) {
 
     response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('Today is ' + dayName + ', ' + monthName + ' ' + Date.getDate +
+    response.write('Today is ' + dayName + ', ' + monthName + ' ' + date +
         ' and the available trucks are ' + '\n' + truckString);
     response.end('Have a great meal!');
 }
