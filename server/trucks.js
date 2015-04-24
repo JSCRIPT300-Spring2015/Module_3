@@ -253,9 +253,10 @@ var foodTrucks = [
 // include the Truck in the availableTrucks
 
 function filterByDay(dayName) { 
+
     return _.filter(foodTrucks, function (truck) { 
 	    return _.any(truck.schedule, function (day) { 
-		    return dayName === day.name;
+		    return dayName === day;
 	     }); 
     }); 
 }
@@ -265,9 +266,4 @@ var filterByDay = {
 };
 
 module.exports = filterByDay;
-/* 
- * return an object from the module with a single method on it: filterByDay
- * that method should take a single parameter that represents the day to filter on
- * use underscore's filter() method to return all trucks that have the day in their
- * schedule
- * / 
+ 

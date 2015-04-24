@@ -13,8 +13,7 @@ function setDate(userDate) {
             theDate = new Date();
         }
     } 
-    dateSet = true;          
-    //console.log("In set date - date = ", theDate);      
+    dateSet = true;               
 } 
 
 function getDate(returnObj) {            
@@ -44,7 +43,7 @@ function getDayName() {
     //console.log('dayNumber = ', dayNumber);
     theDay = dayNames[dayNumber];
 
-    console.log("Day of the week is ", theDay);
+    //console.log("Day of the week is ", theDay);
     return theDay;
 }    
 
@@ -61,7 +60,7 @@ function getMonthName() {
     monthNumber = theDate.getMonth();            
     theMonth = monthNames[monthNumber];
 
-    console.log("Month is ", theMonth);
+    //console.log("Month is ", theMonth);
     return theMonth;
 
 }
