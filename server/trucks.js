@@ -1,5 +1,8 @@
 // use the underscore module to filter the following data
 
+// Could not resolve node-underscore issues, so just importing it here with new handle
+var _und = require('underscore')
+
 var foodTrucks = [
 	{
 		name: '314 PIE',
@@ -251,8 +254,19 @@ var foodTrucks = [
 
 var filterTrucks = {
 
-	filterByDay: function (day) {
-		return foodTrucks[0];
+	// note: only using underscore to check list contents,
+	// could not figure out easy way to use filter method in this instance
+
+	filterByDay: function(requestedDay) {
+		var openTrucks = [];
+		for (truck in foodTrucks) {
+			openDays = foodTrucks[truck]['schedule'];
+			if (_und.contains(openDays, requestedDay)) {
+				openTrucks.push(foodTrucks[truck]);
+			}
+		}
+
+		return openTrucks;	
 	}
 };
 
