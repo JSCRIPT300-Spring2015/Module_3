@@ -11,3 +11,24 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
+var http = require('http');
+var trucks = require('./trucks');
+var enhancedDate = require('./enhancedDate');
+
+http.createServer(handleRequest).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+
+function handleRequest(req, res) {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	var today = enhancedDate.getDate();
+	var day = enhancedDate.getDayName();
+	var month = enhancedDate.getMonthName();
+	var truckList = trucks.filterByDay(day);
+	var myListStr = "<p>Today is " + day + ", " + month + " " + today + ". The food trucks available are :</p><ul>";
+	for (truck in truckList) {
+		myListStr += "<li>" + truckList[truck].name + "</li>";
+	} 
+	myListStr += "</ul>";
+	res.write(myListStr);
+	res.end();
+}
