@@ -14,8 +14,11 @@
 var http = require('http');
 var trucks = require('./trucks');
 var enhancedDate = require('./enhancedDate');
-var dayName = enhancedDate.getDayName;
-var monthName = enhancedDate.getMonthName;
+var dayName = enhancedDate.getDayName();
+var monthName = enhancedDate.getMonthName();
+
+var today = new Date();
+var date = today.getDate();
 
 var availableTrucks = trucks.filterByDay(dayName);
 var truckString = '';

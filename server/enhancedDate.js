@@ -1,126 +1,112 @@
-var enhancedDate = function () {    
-    'use strict';
+'use strict';
 
-    var theDate;
-    var now;
-    var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 
-        'Friday', 'Saturday'];
-    var monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'November', 'December'];
-    var dateSet = false;
-    // explicit object enhancedDate      
+var theDate;
+var dateSet = false; 
 
-    //function checkDate(userDate) {
-    //      if (theDate instanceof Date) {
-    //            return true; 
-    //        } else {
-    //            return false;    
-    //        }
-    //    },
-
-     function setDate(userDate) { 
-        if (userDate instanceof Date) {
+function setDate(userDate) { 
+    if (userDate instanceof Date) {
+        theDate = new Date(userDate);
+    } else { 
+        if (typeof userDate === 'number') {
             theDate = new Date(userDate);
-        } else { 
-            if (typeof userDate === 'number') {
-                theDate = new Date(userDate);
-            } else {
-                theDate = new Date();
-            }
-        } 
-        dateSet = true;          
-            //console.log("In set date - date = ", theDate);      
+        } else {
+            theDate = new Date();
+        }
     } 
+    dateSet = true;          
+    //console.log("In set date - date = ", theDate);      
+} 
 
-     function getDate(returnObj) {            
-        if (!dateSet) {
-           setDate();
-        }
-
-        if (returnObj) {
-            return theDate;
-        } else {
-            return theDate.getTime();
-        }
-                              
+function getDate(returnObj) {            
+    if (!dateSet) {
+       setDate();
     }
 
-    function getDayName() {
+    if (returnObj) {
+        return theDate;
+    } else {
+        return theDate.getTime();
+    }
+                           
+}
+
+function getDayName() {
         
-        if (!dateSet) {
-            setDate(); 
-        }
+    if (!dateSet) {
+        setDate(); 
+    }
+    var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 
+        'Thursday', 'Friday', 'Saturday'];
+    var dayNumber;
+    var theDay;
 
-        var dayNumber;
-        var theDay;
+    dayNumber = theDate.getDay();
+    //console.log('dayNumber = ', dayNumber);
+    theDay = dayNames[dayNumber];
 
-        dayNumber = theDate.getDay();
-        //console.log('dayNumber = ', dayNumber);
-        theDay = dayNames[dayNumber];
- 
-        console.log("Day of the week is ", theDay);
-        return theDay;
-        }
+    console.log("Day of the week is ", theDay);
+    return theDay;
+}    
 
-    function getMonthName() {
+function getMonthName() {
         	
-        if (!dateSet) {
-            setDate(); 
-        }        
+    if (!dateSet) {
+       setDate(); 
+    }        
+    var monthNames = ['January', 'February', 'March', 'April', 'May', 
+        'June','July', 'August', 'September', 'November', 'December'];
+    var theMonth;
+    var monthNumber;
 
-        var theMonth;
-        var monthNumber;
+    monthNumber = theDate.getMonth();            
+    theMonth = monthNames[monthNumber];
 
-        monthNumber = theDate.getMonth();            
-        theMonth = monthNames[monthNumber];
+    console.log("Month is ", theMonth);
+    return theMonth;
 
-        console.log("Month is ", theMonth);
-        return theMonth;
+}
 
+function isFuture() {
+
+    if (!dateSet) {
+        setDate(); 
+    }        
+
+    var now = Date.now();
+
+    if (now > theDate.getTime()) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function isToday() {
+
+   if (!dateSet) {
+        setDate(); 
     }
 
-    function isFuture() {
+    var todaysDate = new Date();
+    var todaysMonth = todaysDate.getMonth();
+    var todaysDate1 = todaysDate.getDate();
+    var todaysYear = todaysDate.getYear();
 
-        if (!dateSet) {
-            setDate(); 
-        }        
-
-        now = Date.now();
-
-        if (now > theDate.getTime()) {
-            return false;
-        } else {
-            return true;
-        }
+    if ((todaysMonth === theDate.getMonth()) && (todaysDate1 === theDate.getDate()) &&
+        (todaysYear === theDate.getYear())) {
+        return true;
+    } else {
+        return false;
     }
+}
 
-    function isToday() {
-
-        if (!dateSet) {
-            setDate(); 
-        }
-
-        var todaysDate = new Date();
-        var todaysMonth = todaysDate.getMonth();
-        var todaysDate1 = todaysDate.getDate();
-        var todaysYear = todaysDate.getYear();
-
-         if ((todaysMonth === theDate.getMonth()) && (todaysDate1 === theDate.getDate()) &&
-            (todaysYear === theDate.getYear())) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
+var enhancedDate = {
+    setDate: setDate,
+    getDate: getDate,
+    getDayName: getDayName,
+    getMonthName: getMonthName,
+    isFuture: isFuture,
+    isToday: isToday
 };
-//return {
-//    setDate: setDate,
-//    getDate: getDate,
-//    getDayName: getDayName,
-//    getMonthName: getMonthName,
-//    isFuture: isFuture,
-//    isToday: isToday
-//};
 
 module.exports = enhancedDate;
