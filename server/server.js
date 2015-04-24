@@ -20,7 +20,7 @@ http.createServer(function (request, response) {
 
 	var listTrucks = trucks.filterByDay(getDayName);
 
-	for (var i = 0; i < trucks.length; i++) {
+	for (var i = 0; i < listTrucks.length; i++) {
 		responseString += "\n" + listTrucks[i].name;
 	}
 
