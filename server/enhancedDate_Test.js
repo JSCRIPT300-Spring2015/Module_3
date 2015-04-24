@@ -100,7 +100,7 @@ function checkUndefined(a, str) {
 	if ( !(typeof a == 'undefined') ) {
 		console.log("ERROR: " + str + " - " + a + " not undefined" );
 	}else {
-	console.log("Success");
+		console.log("Success");
 	}
 }
 
