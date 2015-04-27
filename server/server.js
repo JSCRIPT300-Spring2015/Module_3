@@ -11,3 +11,26 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
+
+// import modules
+var http = require('http');
+var trucks = require('./trucks')
+var enhancedDate = require('./enhancedDate')
+
+// start a server
+http.createServer(function (request, response) {
+
+	// Access day name as a string using enhancedDate
+	
+	// Set day to current day (when server is called)
+	enhancedDate.enhancedDate.setDate();
+	dayString = enhancedDate.enhancedDate.getDayNames();
+
+	// list all trucks available on today's date
+    truckList = trucks.filterTrucks.filterByDay(dayString);
+    for (truck in truckList)
+    	response.write(truckList[truck] + '\n');
+    response.end();
+}).listen(3000, function () {
+    console.log('listening on port 3000');
+});
