@@ -262,7 +262,7 @@ var filterTrucks = {
 		for (truck in foodTrucks) {
 			openDays = foodTrucks[truck]['schedule'];
 			if (_und.contains(openDays, requestedDay)) {
-				openTrucks.push(foodTrucks[truck]);
+				openTrucks.push(foodTrucks[truck]['name']);
 			}
 		}
 
