@@ -1,4 +1,9 @@
-// use the underscore module to filter the following data
+/* 
+ * Author: Sam Negass
+ * Description: A module that returns which food trucks are open on a given day.
+ */
+
+var und = require('underscore')
 
 var foodTrucks = [
 	{
@@ -247,10 +252,22 @@ var foodTrucks = [
 		schedule: []
 	}
 ];
+ 
+var filterbyDay = function (day) {
+    
+    var truckString = "";
+    for (i = 0; i < foodTrucks.length; i++) {
+        var container = und.filter(foodTrucks[i].schedule, function (x) { 
+                    return x === day });
+        if (container.length !== 0) {        
+            truckString += foodTrucks[i].name + '\n';
+        } 
+    }
+    return truckString;
+}
 
-/* 
- * return an object from the module with a single method on it: filterByDay
- * that method should take a single parameter that represents the day to filter on
- * use underscore's filter() method to return all trucks that have the day in their
- * schedule
- * /
+module.exports.filterbyDay = filterbyDay;
+
+
+ 
+ 
