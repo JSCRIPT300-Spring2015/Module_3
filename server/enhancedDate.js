@@ -21,12 +21,12 @@
  * isToday: Return boolean true if the stored date is "today".
  */
 
-var enhancedDate = (function () {
+//var enhancedDate = (function () {
     // private data variables
     var myDate;
     
-    function setDate(dateItem) {
-        console.log("setDate");
+    var setDate = function (dateItem) {
+        //console.log("setDate");
         if (dateItem === undefined) {
             myDate = new Date();
         } else {
@@ -34,8 +34,9 @@ var enhancedDate = (function () {
         }
     };
     
-    function getDate(dateItem) {
-        console.log("getDate");
+    var getDate = function (dateItem) {
+        //console.log("getDate");
+        //console.log("mydate: " + myDate);
         if (dateItem) {
             return myDate;
         } else {
@@ -43,8 +44,8 @@ var enhancedDate = (function () {
         }
     };
         
-    function getDayName() {
-        console.log("getDayName");
+    var getDayName = function () {
+        //console.log("getDayName");
         var day = myDate.getDay();
         switch (day) {
             case 0:
@@ -64,8 +65,8 @@ var enhancedDate = (function () {
         }
     };
         
-    function getMonthName() {
-        console.log("getMonthName");
+    var getMonthName = function () {
+        //console.log("getMonthName");
         var month = myDate.getMonth();
         switch (month) {
             case 0:
@@ -95,8 +96,8 @@ var enhancedDate = (function () {
         }
     };
         
-    function isFuture() {
-        console.log("isFuture");
+    var isFuture = function () {
+        //console.log("isFuture");
         var now = Date.now();
         if (myDate > now) {
             return true;
@@ -105,8 +106,8 @@ var enhancedDate = (function () {
         }
     };
         
-    function isToday() {
-        console.log("isToday");
+    var isToday = function () {
+        //console.log("isToday");
         var now = Date.now();
         if (this.getDate(myDate) == this.getDate(now)) {
             return true;
@@ -115,52 +116,12 @@ var enhancedDate = (function () {
         }
     };
     
-    
-    return {
-        // public methods and properties
         
-        setDate: setDate,
-        getDate: getDate,
-        getDayName: getDayName,    
-        getMonthName: getMonthName,
-        isFuture: isFuture,
-        isToday: isToday
-    }
+module.exports.setDate = setDate;
+module.exports.getDate = getDate;
+module.exports.getDayName = getDayName;    
+module.exports.getMonthName = getMonthName;
+module.exports.isFuture = isFuture;
+module.exports.isToday = isToday;
 
-}) ();
 
-/******
-// Testing
-var today = new Date();
-console.log("today: " + today);
-enhancedDate.setDate();
-console.log("setDate");
-enhancedDate.setDate(today);
-console.log("setDate(today)");
-enhancedDate.setDate(86400000);
-console.log("setDate(86,400,000)" + new Date(86400000));
-enhancedDate.getDate(true);
-console.log(enhancedDate.getDate(true));
-console.log("getDate(true)");
-enhancedDate.getDate();
-console.log(enhancedDate.getDate());
-console.log("getDate()");
-enhancedDate.setDate();
-enhancedDate.getDayName();
-console.log(enhancedDate.getDayName());
-enhancedDate.getMonthName();
-console.log(enhancedDate.getMonthName());
-enhancedDate.isFuture();
-console.log(enhancedDate.isFuture());
-enhancedDate.isToday();
-console.log(enhancedDate.isToday());
-
-// suggested testing
-var message = ''; 
-
-enhancedDate.setDate(new Date()); 
-
-message += 'Today is ' + enhancedDate.getDayName() + ' in the month of ' + enhancedDate.getMonthName(); 
-
-console.log(message); 
-*******/
