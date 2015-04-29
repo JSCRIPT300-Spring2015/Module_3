@@ -1,0 +1,26 @@
+{
+  "name": "module_3",
+  "version": "1.0.0",
+  "description": "A library for module 3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerw8/Module_3"
+  },
+  "keywords": [
+    "module_3"
+  ],
+  "author": "Tyler Waite <waite.tyler@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerw8/Module_3/issues"
+  },
+  "homepage": "https://github.com/tylerw8/Module_3",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
