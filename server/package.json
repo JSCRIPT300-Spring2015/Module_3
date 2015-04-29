@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/tylerw8/Module_3/issues"
   },
-  "homepage": "https://github.com/tylerw8/Module_3"
+  "homepage": "https://github.com/tylerw8/Module_3",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
 }
