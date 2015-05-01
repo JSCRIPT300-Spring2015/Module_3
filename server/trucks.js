@@ -258,10 +258,9 @@ var foodTrucks = [
  
 var filterByDay = function filterByDay(day) {
 
-	var todayFoodTrucks = _.filter(foodTrucks, function(truck){
-		for (var i = 0; i < truck.schedule.length; i++){
-			return day === truck.schedule[i];
-		}
+	return _.filter(foodTrucks, function(truck){
+		return _.contains(truck.schedule, day)
 	});
-	return todayFoodTrucks;
 };
+
+module.exports = filterByDay;

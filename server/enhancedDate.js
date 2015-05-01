@@ -1,6 +1,6 @@
 // export this as a Node module using the enhancedDate.js code from Module_2
 
-var enhancedDate = function () {
+//var enhancedDate = function () {
 	
 	var publicAPI={};
 	
@@ -31,7 +31,7 @@ var enhancedDate = function () {
     		newDate= new Date();
     	}
     	return newDate
-    }
+    };
     
 	function getDate(arg){
 		setNewDate();
@@ -41,29 +41,29 @@ var enhancedDate = function () {
 			return newDate.getTime();
 		}
 				
-	}
+	};
 	
 	function getDayName(){
 		setNewDate();
 		return privateAPI.days[newDate.getDay()];
-	}
+	};
 	
 	function getMonthName(){
 		setNewDate();
 		return privateAPI.months[newDate.getMonth()];
-	}
+	};
 	
 	function isFuture(){
 		setNewDate();
 		return (now.getTime() < newDate.getTime());
-	}
+	};
 	
 	function isToday(){
 		setNewDate();
 		return (now.getTime() == newDate.getTime());
-	}
+	};
 
-    publicAPI = {
+    module.exports = {
     	setDate: setDate,
     	getDate: getDate,
     	getDayName: getDayName,
@@ -72,7 +72,7 @@ var enhancedDate = function () {
     	isToday:isToday
     };
     
-    return publicAPI;
-};
+//    return publicAPI;
+//};
 
-module.exports = enhancedDate;
+//module.exports = enhancedDate;

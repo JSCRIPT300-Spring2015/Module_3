@@ -16,7 +16,7 @@ var http = require('http');
 var enhancedDate = require('./enhancedDate');
 var trucks = require('./trucks');
 
-todayTrucks = trucks.filterByDay(enhancedDate.getDayName());
+var todayTrucks = trucks(enhancedDate.getDayName());
 
 var todayTruckAre= '';
 for (var i = 0; i < todayTrucks.length; i++){	
