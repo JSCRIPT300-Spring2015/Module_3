@@ -1,0 +1,14 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "this is a sample json and data",
+  "main": "index.js",
+  "dependencies": {
+  	    "underscore": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
