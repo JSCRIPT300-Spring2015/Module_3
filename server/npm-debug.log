@@ -1,0 +1,185 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'underscore' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose install underscore is installed as 1.8.3
+6 silly cache add args [ 'underscore', null ]
+7 verbose cache add spec underscore
+8 silly cache add parsed spec { raw: 'underscore',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'underscore',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed underscore@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: 'underscore', range: '*', hasData: false }
+13 silly mapToRegistry name underscore
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/underscore
+17 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/underscore
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 12:25:06 PM
+21 verbose request using bearer token for auth
+22 verbose request id fd21fdfdd9c7f48f
+23 verbose etag "8SXMDGGWIHHGAS6XTKZQDB565"
+24 http request GET https://registry.npmjs.org/underscore
+25 http 304 https://registry.npmjs.org/underscore
+26 silly get cb [ 304,
+26 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly get     etag: '"8SXMDGGWIHHGAS6XTKZQDB565"',
+26 silly get     'cache-control': 'max-age=60',
+26 silly get     'accept-ranges': 'bytes',
+26 silly get     date: 'Sun, 03 May 2015 19:25:06 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-lax1425-LAX',
+26 silly get     'x-cache': 'MISS',
+26 silly get     'x-cache-hits': '0',
+26 silly get     'x-timer': 'S1430681106.667399,VS0,VE77' } ]
+27 verbose etag https://registry.npmjs.org/underscore from cache
+28 verbose get saving underscore to C:\Users\katyg\AppData\Roaming\npm-cache\registry.npmjs.org\underscore\.cache.json
+29 silly addNameRange number 2 { name: 'underscore', range: '*', hasData: true }
+30 silly addNameRange versions [ 'underscore',
+30 silly addNameRange   [ '1.0.3',
+30 silly addNameRange     '1.0.4',
+30 silly addNameRange     '1.1.0',
+30 silly addNameRange     '1.1.1',
+30 silly addNameRange     '1.1.2',
+30 silly addNameRange     '1.1.3',
+30 silly addNameRange     '1.1.4',
+30 silly addNameRange     '1.1.5',
+30 silly addNameRange     '1.1.6',
+30 silly addNameRange     '1.1.7',
+30 silly addNameRange     '1.2.0',
+30 silly addNameRange     '1.2.1',
+30 silly addNameRange     '1.2.2',
+30 silly addNameRange     '1.2.3',
+30 silly addNameRange     '1.2.4',
+30 silly addNameRange     '1.3.0',
+30 silly addNameRange     '1.3.1',
+30 silly addNameRange     '1.3.2',
+30 silly addNameRange     '1.3.3',
+30 silly addNameRange     '1.4.0',
+30 silly addNameRange     '1.4.1',
+30 silly addNameRange     '1.4.2',
+30 silly addNameRange     '1.4.3',
+30 silly addNameRange     '1.4.4',
+30 silly addNameRange     '1.5.0',
+30 silly addNameRange     '1.5.1',
+30 silly addNameRange     '1.5.2',
+30 silly addNameRange     '1.6.0',
+30 silly addNameRange     '1.7.0',
+30 silly addNameRange     '1.8.0',
+30 silly addNameRange     '1.8.1',
+30 silly addNameRange     '1.8.2',
+30 silly addNameRange     '1.8.3' ] ]
+31 verbose addNamed underscore@1.8.3
+32 silly addNamed semver.valid 1.8.3
+33 silly addNamed semver.validRange 1.8.3
+34 silly cache afterAdd underscore@1.8.3
+35 verbose afterAdd C:\Users\katyg\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json not in flight; writing
+36 verbose afterAdd C:\Users\katyg\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json written
+37 silly install resolved [ { name: 'underscore',
+37 silly install resolved     description: 'JavaScript\'s functional programming helper library.',
+37 silly install resolved     homepage: 'http://underscorejs.org',
+37 silly install resolved     keywords: [ 'util', 'functional', 'server', 'client', 'browser' ],
+37 silly install resolved     author: { name: 'Jeremy Ashkenas', email: 'jeremy@documentcloud.org' },
+37 silly install resolved     repository:
+37 silly install resolved      { type: 'git',
+37 silly install resolved        url: 'git://github.com/jashkenas/underscore.git' },
+37 silly install resolved     main: 'underscore.js',
+37 silly install resolved     version: '1.8.3',
+37 silly install resolved     devDependencies:
+37 silly install resolved      { docco: '*',
+37 silly install resolved        eslint: '0.6.x',
+37 silly install resolved        karma: '~0.12.31',
+37 silly install resolved        'karma-qunit': '~0.1.4',
+37 silly install resolved        'qunit-cli': '~0.2.0',
+37 silly install resolved        'uglify-js': '2.4.x' },
+37 silly install resolved     scripts:
+37 silly install resolved      { test: 'npm run test-node && npm run lint',
+37 silly install resolved        lint: 'eslint underscore.js test/*.js',
+37 silly install resolved        'test-node': 'qunit-cli test/*.js',
+37 silly install resolved        'test-browser': 'npm i karma-phantomjs-launcher && ./node_modules/karma/bin/karma start',
+37 silly install resolved        build: 'uglifyjs underscore.js -c "evaluate=false" --comments "/    .*/" -m --source-map underscore-min.map -o underscore-min.js',
+37 silly install resolved        doc: 'docco underscore.js' },
+37 silly install resolved     license: 'MIT',
+37 silly install resolved     files:
+37 silly install resolved      [ 'underscore.js',
+37 silly install resolved        'underscore-min.js',
+37 silly install resolved        'underscore-min.map',
+37 silly install resolved        'LICENSE' ],
+37 silly install resolved     gitHead: 'e4743ab712b8ab42ad4ccb48b155034d02394e4d',
+37 silly install resolved     bugs: { url: 'https://github.com/jashkenas/underscore/issues' },
+37 silly install resolved     _id: 'underscore@1.8.3',
+37 silly install resolved     _shasum: '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022',
+37 silly install resolved     _from: 'underscore@*',
+37 silly install resolved     _npmVersion: '1.4.28',
+37 silly install resolved     _npmUser: { name: 'jashkenas', email: 'jashkenas@gmail.com' },
+37 silly install resolved     maintainers: [ [Object] ],
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022',
+37 silly install resolved        tarball: 'http://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz' },
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install underscore@1.8.3 into c:\Users\katyg\Documents\GitHub\Module_3\server
+39 info installOne underscore@1.8.3
+40 verbose installOne of underscore to c:\Users\katyg\Documents\GitHub\Module_3\server not in flight; installing
+41 verbose lock using C:\Users\katyg\AppData\Roaming\npm-cache\_locks\underscore-8a6171344974c847.lock for c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+42 silly install write writing underscore 1.8.3 to c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+43 silly cache addNamed cb underscore@1.8.3
+44 verbose unbuild node_modules\underscore
+45 info preuninstall underscore@1.8.3
+46 info uninstall underscore@1.8.3
+47 verbose unbuild rmStuff underscore@1.8.3 from c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules
+48 info postuninstall underscore@1.8.3
+49 silly gentlyRm c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore is being purged from base c:\Users\katyg\Documents\GitHub\Module_3\server
+50 verbose gentlyRm don't care about contents; nuking c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+51 silly vacuum-fs purging c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+52 silly vacuum-fs removing c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules
+53 silly vacuum-fs finished vacuuming up to c:\Users\katyg\Documents\GitHub\Module_3\server
+54 verbose tar unpack C:\Users\katyg\AppData\Roaming\npm-cache\underscore\1.8.3\package.tgz
+55 verbose tar unpacking to c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+56 silly gentlyRm c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore is being purged
+57 verbose gentlyRm don't care about contents; nuking c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+58 silly vacuum-fs Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore'
+58 silly vacuum-fs     at Error (native)
+59 verbose unlock done using C:\Users\katyg\AppData\Roaming\npm-cache\_locks\underscore-8a6171344974c847.lock for c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+60 verbose stack Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore'
+60 verbose stack     at Error (native)
+61 verbose cwd c:\Users\katyg\Documents\GitHub\Module_3\server
+62 error Windows_NT 6.1.7601
+63 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "underscore"
+64 error node v0.12.2
+65 error npm  v2.7.4
+66 error path c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+67 error code EPERM
+68 error errno -4048
+69 error Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore'
+69 error     at Error (native)
+69 error  { [Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore']
+69 error   errno: -4048,
+69 error   code: 'EPERM',
+69 error   path: 'c:\\Users\\katyg\\Documents\\GitHub\\Module_3\\server\\node_modules\\underscore' }
+70 error Please try running this command again as root/Administrator.
+71 verbose exit [ -4048, true ]
+72 verbose unbuild node_modules\underscore
+73 silly gentlyRm c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore is being purged from base c:\Users\katyg\Documents\GitHub\Module_3\server
+74 verbose gentlyRm don't care about contents; nuking c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore
+75 silly vacuum-fs Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore'
+75 silly vacuum-fs     at Error (native)
+76 error error rolling back Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore'
+76 error error rolling back     at Error (native)
+76 error error rolling back  { [Error: EPERM, lstat 'c:\Users\katyg\Documents\GitHub\Module_3\server\node_modules\underscore']
+76 error error rolling back   errno: -4048,
+76 error error rolling back   code: 'EPERM',
+76 error error rolling back   path: 'c:\\Users\\katyg\\Documents\\GitHub\\Module_3\\server\\node_modules\\underscore' }
