@@ -1,5 +1,5 @@
-// use the underscore module to filter the following data
-
+//Tyler Waite Module 3 food truck module version 1.0.0 4/28/2015, updated to match James' week 5 in class version.
+  
 var foodTrucks = [
 	{
 		name: '314 PIE',
@@ -204,7 +204,7 @@ var foodTrucks = [
 	{
 		name: 'Curbside',
 		type: 'Vietnamese',
-		schedule: []
+		schedule: ['Friday']
 	},
 	{
 		name: 'Danielle\'s Crepes',
@@ -214,7 +214,7 @@ var foodTrucks = [
 	{
 		name: 'Dante\'s Inferno Dogs',
 		type: 'Hot Dogs',
-		schedule: []
+		schedule: ['Saturday']
 	},
 	{
 		name: 'Delicatessen Montanti',
@@ -224,7 +224,7 @@ var foodTrucks = [
 	{
 		name: 'Diablo Food Truckz',
 		type: 'Asian',
-		schedule: []
+		schedule: ['Friday', 'Saturday']
 	},
 	{
 		name: 'Djung on Wheels',
@@ -248,9 +248,37 @@ var foodTrucks = [
 	}
 ];
 
+var _ = require('underscore');
+  
+function filterByDay(day){
+//  var trucksFilter = _.filter(foodTrucks, function(day));  
+    return _.filter(foodTrucks, function(truck){
+          return _.contains(truck.schedule, day);
+    });
+}
+                              
+module.exports = filterByDay;
+                              
+                        
 /* 
  * return an object from the module with a single method on it: filterByDay
  * that method should take a single parameter that represents the day to filter on
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
- * /
+ */
+// 
+//
+//
+//function getTrucks(){}
+//
+//};
+//
+////module.exports = filterByDay;
+////module.exports.filterByDay = filterByDay;
+//var myObj = {}
+//module.exports = myObj;
+
+//module.exports = {
+//  filterByDay: filterByDay,
+//  getTrucks: getTrucks
+//}
