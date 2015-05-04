@@ -254,14 +254,15 @@ var foodTrucks = [
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
  */
-var undsc = require('../node_modules/underscore/underscore');
+var undsc = require('underscore');
 
-var filterByDay = function (day) {
-    var trucks = undsc.filter(foodTrucks, function (day) {
-        foodTrucks.schedule == day;
-        console.log(foodTrucks.schedule);
+function filterByDay(day) {
+    var trucks = undsc.filter(foodTrucks, function (truck) {
+        return undsc.contains(truck.schedule, day);
     });
     return trucks;
-};
+}
 
-module.exports.filterByDay = filterByDay();
+module.exports = {
+    filterByDay: filterByDay
+}

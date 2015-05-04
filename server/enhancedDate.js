@@ -37,6 +37,10 @@
     var getDate = function (dateItem) {
         //console.log("getDate");
         //console.log("mydate: " + myDate);
+        if (myDate === undefined) {
+            myDate = new Date();
+        }
+        
         if (dateItem) {
             return myDate;
         } else {
@@ -46,6 +50,10 @@
         
     var getDayName = function () {
         //console.log("getDayName");
+        if (myDate === undefined) {
+            myDate = new Date();
+        }
+        
         var day = myDate.getDay();
         switch (day) {
             case 0:
@@ -67,6 +75,10 @@
         
     var getMonthName = function () {
         //console.log("getMonthName");
+        if (myDate === undefined) {
+            myDate = new Date();
+        }
+        
         var month = myDate.getMonth();
         switch (month) {
             case 0:
@@ -98,6 +110,10 @@
         
     var isFuture = function () {
         //console.log("isFuture");
+        if (myDate === undefined) {
+            myDate = new Date();
+        }
+        
         var now = Date.now();
         if (myDate > now) {
             return true;
@@ -108,6 +124,10 @@
         
     var isToday = function () {
         //console.log("isToday");
+        if (myDate === undefined) {
+            myDate = new Date();
+        }        
+
         var now = Date.now();
         if (this.getDate(myDate) == this.getDate(now)) {
             return true;
