@@ -129,7 +129,7 @@ var foodTrucks = [
 	{
 		name: 'Buddha Bruddah',
 		type: 'Asian',
-		schedule: ['Monday', 'Tuesday','Wednesday','Thursday', 'Friday']
+		schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 	},
 	{
 		name: 'Budha Bear Bagels',
@@ -159,7 +159,7 @@ var foodTrucks = [
 	{
 		name: 'Charlie\'s',
 		type: 'Burgers/Cheesesteaks',
-		schedule: ['Monday', 'Tuesday', 'Wednesday','Thursday']
+		schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
 	},
 	{
 		name: 'Cheese Wizards',
@@ -253,4 +253,16 @@ var foodTrucks = [
  * that method should take a single parameter that represents the day to filter on
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
- * /
+ */
+var undsc = require('underscore');
+
+function filterByDay(day) {
+    var trucks = undsc.filter(foodTrucks, function (truck) {
+        return undsc.contains(truck.schedule, day);
+    });
+    return trucks;
+}
+
+module.exports = {
+    filterByDay: filterByDay
+}
