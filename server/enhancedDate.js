@@ -1,13 +1,11 @@
-//Tyler Waite Module 3 enhanced date module version 1.0.0 4/28/2015
+//Tyler Waite Module 3 enhanced date module version 1.0.0 4/28/2015.  Updated with James in class version from week 5
 
-var enhancedDate = function () {
-//This is the enhancedDate code James wrote in class.
-  'use strict';
+var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   
-  var myDate = null;
-  var dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var dateSet = false;
+var myDate = null;  
+var dateIsSet = false;
   
 function setDate(date) {
   
@@ -16,52 +14,51 @@ function setDate(date) {
   } else {
     myDate = new Date();
   }
-  dateSet = true;
 }
 
 function getDate(returnObj) {
   
-  if (!dateSet) {
-    setDate();
+  if (!dateIsSet) {
+        setDate();
   }
   
   if (returnObj) {
-      return myDate;
+        return myDate;
   } else {
       return myDate.getTime();
   }
 } 
 
 function getDayName() {
-  if (!dateSet) {
+  if (!dateIsSet) {
     setDate();
   }
-  var day = myDate.getDay();
+//  var day = myDate.getDay();
   
-  return dayNames[day];
+  return dayNames[myDate.getDay()];
 }  
   
-function getMonthNames(){
-  if (!dateSet) {
+function getMonthName(){
+  if (!dateIsSet) {
     setDate();
   }
   
-  var month = myDate.getMonth();
+//  var month = myDate.getMonth();
   
-  return monthNames [month];
+  return monthNames[myDate.getMonth()];
 }
 
 function isToday() {
-  if (!dateSet) {
+  if (!dateIsSet) {
     setDate();
   }
   
   var today = new Date();
-  var month = today.getMonth();
-  var date = today.getDate();
-  var year = today.getYear();
+//  var month = today.getMonth();
+//  var date = today.getDate();
+//  var year = today.getYear();
   
-  if (myDate.getMonth () === month && myDate.getDate() === date && myDate.getYear() === year) {
+  if (today.getMonth() === myDate.getMonth() && today.getYear() === myDate.getYear() && today.getDate() === myDate.getDate()) {
       return true;
   } else {
       return false;
@@ -69,22 +66,20 @@ function isToday() {
 }
   
 function isFuture() {
-  if (!dateSet) {
+  if (!dateIsSet) {
     setDate();
   }
   
-  return myDate.getTime() > Date.now();
+  var now = new Date();
+  return myDate > now;
 }  
   
-//return {
-//  setDate: setDate,
-//  getDate: getDate,
-//  getDayName: getDayName,
-//  getMonthName: getMonthName,
-//  isToday: isToday,
-//  isFuture: isFuture
-//};
-
+module.exports = {
+  setDate: setDate,
+  getDate: getDate,
+  getDayName: getDayName,
+  getMonthName: getMonthName,
+  isToday: isToday,
+  isFuture: isFuture
 };
 
-module.exports = enhancedDate;
