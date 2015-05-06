@@ -253,4 +253,13 @@ var foodTrucks = [
  * that method should take a single parameter that represents the day to filter on
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
- * /
+ */
+
+var _ = require('underscore');
+
+function filterbyDay (day) {
+	
+	_.filter(foodTrucks[schedule], function (item) {
+        return item.schedule === day;
+    })
+}
