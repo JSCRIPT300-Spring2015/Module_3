@@ -257,9 +257,11 @@ var foodTrucks = [
 
 var _ = require('underscore');
 
-function filterbyDay (day) {
+function filterByDay (day) {
 	
-	_.filter(foodTrucks[schedule], function (item) {
-        return item.schedule === day;
+	_.filter(foodTrucks, function (truck) {
+        return _.contains(truck.schedule, day);
     })
 }
+
+module.exports = filterByDay;

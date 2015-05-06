@@ -22,6 +22,7 @@ http.createServer(function (request, response) {
 	var trucks = filterByDay(currentDay);
 	var output;
 
+
 	trucks.forEach(function(truck) {
 		output += truck.name + ", ";
 	});
