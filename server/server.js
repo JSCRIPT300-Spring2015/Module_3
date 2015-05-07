@@ -22,14 +22,15 @@ http.createServer(function (request, response) {
 	var trucks = filterByDay(currentDay);
 	var output;
 
+// console.log(currentDay);
 
-	trucks.forEach(function(truck) {
-		output += truck.name + ", ";
-	});
+	// trucks.forEach(function(truck) {
+	// 	output += truck.name + ", ";
+	// });
 
 	response.writeHead(200, { 'Content-Type' : 'text/plain'});
-	response.write(output);
-	response.end("Buh bye now...");
+	response.write(trucks);
+	response.end("\nBuh bye now...");
 }).listen(3000, function () {
 	console.log('listening to port: 3000');
 });
