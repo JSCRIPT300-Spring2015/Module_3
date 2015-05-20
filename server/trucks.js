@@ -248,9 +248,19 @@ var foodTrucks = [
 	}
 ];
 
+var - = require('underscore');
+
+function filterByDay(day) {
+	return _.filter(foodTrucks, function (truck) {
+		return _.contains(truck.schedule, day);
+	});
+}
+
+module.exports = filterByDay;
+
 /* 
  * return an object from the module with a single method on it: filterByDay
  * that method should take a single parameter that represents the day to filter on
  * use underscore's filter() method to return all trucks that have the day in their
  * schedule
- * /
+ */
