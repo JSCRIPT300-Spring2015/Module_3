@@ -10,3 +10,5 @@ For this assignment, you're going to for this repository to your own Github acco
 
 
 This assignment is due by Thursday, April 23rd by 7pm. Once grading has been completed, a :+1: comment will be added to the pull request and the pull request will be closed.
+
+Adding text to this to test that students can still fork the repo and submit pull requests.
