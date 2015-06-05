@@ -1,3 +1,7 @@
+// MODULE 03 - FOOD TRUCK SERVER
+// Eric Gould
+// Friday, May 21, 2015
+
 // make this a simple http server that writes to the response stream object
 
 // the page should display the following message:
@@ -11,3 +15,45 @@
 // iterating through that list, display the string you built up.
 
 // Remember that the response is a stream object that must be closed.
+
+//**************************************************************************************//
+
+
+// Require/import the HTTP module
+var http = require("http");
+
+// Require the enhancedDate module
+var enhancedDate = require('./enhancedDate');
+
+// Require the trucks module
+var filterByDay = require('./trucks');
+
+
+// Define a port we want to listen to
+const PORT=3000; 
+
+http.createServer(function(request, response) {
+    var currentDay = enhancedDate.getDayName();
+    var currentMonth = enhancedDate.getMonthName();
+    var today = new Date();
+    var date = today.getDate();
+    var trucks = filterByDay(currentDay);
+    var truckHTML = '';
+    var i;
+    var l;
+    trucks.forEach(function (truck) {
+        truckHTML += '<li>' + truck.name + '</li>';
+    });
+    truckHTML += '</ul>';
+    
+    response.writeHead(200,{"Content-Type":"text/html"});
+    response.write('<h3>Today is ' + currentDay + ' ' + currentMonth + ' ' + date '. Here are the available food trucks:</h3>');
+    response.write(truckHTML);
+    response.end();
+}).listen(3000);
+
+// Start our server
+createServer.listen(PORT, function(){
+    //Callback triggered when server is successfully listening.
+    console.log("Server listening on: http://localhost:%s", PORT);
+});
